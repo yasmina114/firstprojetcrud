@@ -24,17 +24,17 @@ public class Produits {
     @JoinColumn(name ="id_Categories")
     private CategoproddbEntity cat;
     @Column(name="Nom_pr")
-    private String Nompr;
+    private String nompr;
     @Column(name="QT_pr")
-    private int QT;
+    private int qt;
     @Column(name="Date_cre_prod")
-    private LocalDate Date_crea;
+    private LocalDate dateCrea;
     @Column(name="Date_mod_prod")
-    private LocalDate Date_modif;
+    private LocalDate dateModif;
     @Column(name="Disponible")
     private boolean disponible ;
     @Column(insertable = false,updatable = false)
-    private Long id_categories;
+    private Long idCategories;
 
 
 

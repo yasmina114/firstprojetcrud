@@ -37,8 +37,8 @@ public class ProduitsServiceImpl implements ProduitService {
         CategoproddbEntity cat = categoprodRepository.findById(id).orElse(null);
         produits.setCat(cat);
         LocalDate date = LocalDate.now();
-        produits.setDate_crea(date);
-        produits.setDate_modif(date);
+        produits.setDateCrea(date);
+        produits.setDateModif(date);
 
         return produitRepository.save(produits);
     }
@@ -46,7 +46,7 @@ public class ProduitsServiceImpl implements ProduitService {
     @Override
     public Produits updateProduit(Produits produits) {
         LocalDate date = LocalDate.now();
-        produits.setDate_modif(date);
+        produits.setDateModif(date);
         return produitRepository.save(produits);
     }
 

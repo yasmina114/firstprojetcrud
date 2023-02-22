@@ -24,9 +24,9 @@ public class CategoproddbEntity {
     @Column(name="QT")
     private int qt;
     @Column(name="Date_cre")
-    private LocalDate Date_cre;
+    private LocalDate dateCre;
     @Column(name="Date_modif")
-    private LocalDate Date_modif;
+    private LocalDate dateModif;
 
     @OneToMany(mappedBy = "cat",cascade = CascadeType.ALL)
     private List<Produits> p;

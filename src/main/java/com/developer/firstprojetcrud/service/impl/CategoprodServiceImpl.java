@@ -39,8 +39,8 @@ public class CategoprodServiceImpl implements CategoprodService {
     @Override
     public CategoproddbEntity saveCategoprod(CategoproddbEntity categoproddbEntity) {
         LocalDate date = LocalDate.now();
-        categoproddbEntity.setDate_cre(date);   
-        categoproddbEntity.setDate_modif(date);
+        categoproddbEntity.setDateCre(date);
+        categoproddbEntity.setDateModif(date);
         return categoprodRepository.save(categoproddbEntity);
     }
 
@@ -48,7 +48,7 @@ public class CategoprodServiceImpl implements CategoprodService {
     public CategoproddbEntity updateCategoprod(CategoproddbEntity categoproddbEntity) {
 
         LocalDate date = LocalDate.now();
-        categoproddbEntity.setDate_modif(date);
+        categoproddbEntity.setDateModif(date);
         return categoprodRepository.save(categoproddbEntity);
     }
 
@@ -65,7 +65,7 @@ public class CategoprodServiceImpl implements CategoprodService {
         List<Produits> produit1 = new ArrayList<>();
         for (Produits prod : produits) {
 
-            if (prod.getId_categories() == id) {
+            if (prod.getIdCategories().equals(id) ) {
                 produit1.add(prod);
             }
         }

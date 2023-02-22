@@ -1,6 +1,5 @@
 package com.developer.firstprojetcrud.service;
 
-import com.developer.firstprojetcrud.entity.CategoproddbEntity;
 import com.developer.firstprojetcrud.entity.Produits;
 
 import java.util.List;
