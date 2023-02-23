@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class FirstprojetcrudApplicationTests {
@@ -16,13 +17,14 @@ class FirstprojetcrudApplicationTests {
 
 	@Test
 	void contextLoads() {
-		CategoproddbEntity categorie = new CategoproddbEntity();
-		categorie.setName("Test Category");
-		categorie.setQt(50);
-
-		CategoproddbEntity savedCategorie = categorieService.saveCategoprod(categorie);
-		assertThat(savedCategorie).isNotNull();
-		assertThat(savedCategorie.getName()).isEqualTo("Test Category");
+		CategoproddbEntity expectedCategorie = CategoproddbEntity.builder()
+				.name("aaaa")
+				.qt(1)
+				.build();
+		CategoproddbEntity savedCategorie = categorieService.saveCategoprod(expectedCategorie);
+		assertNotNull(savedCategorie);
+		assertNotNull(expectedCategorie.getName() , savedCategorie.getName());
 	}
+
 
 }

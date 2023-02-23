@@ -1,5 +1,6 @@
 package com.developer.firstprojetcrud.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -19,10 +20,7 @@ public class Produits {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long iD;
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name ="id_Categories")
-    private CategoproddbEntity cat;
+
     @Column(name="Nom_pr")
     private String nompr;
     @Column(name="QT_pr")
@@ -33,8 +31,15 @@ public class Produits {
     private LocalDate dateModif;
     @Column(name="Disponible")
     private boolean disponible ;
+
+    @JsonBackReference
+    @ManyToOne
+    @JoinColumn(name ="idCategories")
+    private CategoproddbEntity cat;
     @Column(insertable = false,updatable = false)
     private Long idCategories;
+
+
 
 
 
