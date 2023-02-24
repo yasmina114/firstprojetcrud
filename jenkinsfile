@@ -51,7 +51,7 @@ pipeline {
                         stage('Build docker image'){
                                              steps{
                                                      script{
-                                                         bat 'docker build -t mohamedamineboughrara/demo .'
+                                                         bat 'docker build -t yasminaa/backend .'
                                                                          }
                                                                        }
                                                                    }
@@ -59,13 +59,13 @@ pipeline {
 
                                                        steps {
                                                          bat 'echo "login Docker ...."'
-                                                         bat'docker login -u mohamedamineboughrara -p azerty123'
+                                                         bat'docker login -u yasminaa -p y1a2s3m4i5n6'
                                                                     }  }
                                        stage('Docker push') {
 
                                                        steps {
                                                            bat 'echo "Docker is pushing ...."'
-                                                       	bat 'docker push mohamedamineboughrara/demo'
+                                                       	bat 'docker push yasminaa/backend'
                                                                     }  }
 
 
