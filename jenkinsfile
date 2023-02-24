@@ -59,7 +59,7 @@ pipeline {
 
                                                        steps {
                                                            bat 'echo "Docker is pushing ...."'
-                                                       	bat 'docker push yasminaa/firstprojetcrud-0.0.1:latest'
+                                                       	bat 'docker push yasminaa/firstprojetcrud-1.0.0:latest'
                                                                     }  }
 
 
