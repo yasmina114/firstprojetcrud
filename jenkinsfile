@@ -40,11 +40,30 @@ pipeline {
 
                            stage('MVN SONARQUBE') {
                                    steps {
-                                       sh 'mvn sonar:sonar  -Dsonar.projectKey=jenkins  -Dsonar.host.url= http://localhost:9000     -Dsonar.login=228ccbd355b9274ed27e6e397ebb13953eecbe5a'
+                                       sh 'mvn sonar:sonar -Dsonar.projectKey=firstprojetcrud -Dsonar.host.url=http://localhost:9000 -Dsonar.login=8f980978eed76340fe92ccaacdfcc4b0bfcbe207'
                                    }
                                }
 
 
+                        stage('Build docker image'){
+                                             steps{
+                                                     script{
+                                                         sh 'docker build -t mohamedamineboughrara/demo .'
+                                                                         }
+                                                                       }
+                                                                   }
+                                       stage('Docker login') {
+
+                                                       steps {
+                                                         sh 'echo "login Docker ...."'
+                                                         sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                                    }  }
+                                       stage('Docker push') {
+
+                                                       steps {
+                                                           sh 'echo "Docker is pushing ...."'
+                                                       	sh 'docker push mohamedamineboughrara/demo'
+                                                                    }  }
 
 
 
