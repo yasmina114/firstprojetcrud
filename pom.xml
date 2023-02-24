@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.developer</groupId>
 	<artifactId>firstprojetcrud</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>firstprojetcrud</name>
 	<description>Build restful API with jpa and postgresql</description>
 	<properties>

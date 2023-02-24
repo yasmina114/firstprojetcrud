@@ -48,13 +48,7 @@ pipeline {
                                }
 
 
-                        stage('Build docker image'){
-                                             steps{
-                                                     script{
-                                                         bat 'docker build -t yasminaa/backend .'
-                                                                         }
-                                                                       }
-                                                                   }
+
                                        stage('Docker login') {
 
                                                        steps {
@@ -65,7 +59,7 @@ pipeline {
 
                                                        steps {
                                                            bat 'echo "Docker is pushing ...."'
-                                                       	bat 'docker push yasminaa/backend'
+                                                       	bat 'docker push yasminaa/firstprojetcrud-0.0.1:latest'
                                                                     }  }
 
 
