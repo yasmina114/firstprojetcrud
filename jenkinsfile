@@ -40,7 +40,10 @@ pipeline {
 
                            stage('MVN SONARQUBE') {
                                    steps {
-                                       sh 'mvn sonar:sonar -Dsonar.projectKey=firstprojetcrud -Dsonar.host.url=http://localhost:9000 -Dsonar.login=8f980978eed76340fe92ccaacdfcc4b0bfcbe207'
+                                       bat 'mvn clean verify sonar:sonar \
+                                              -Dsonar.projectKey=yas \
+                                              -Dsonar.host.url=http://localhost:9002 \
+                                              -Dsonar.login=sqp_ce4ded49f98fbc902d2beda2f90ad4c5034d454c'
                                    }
                                }
 
@@ -48,21 +51,21 @@ pipeline {
                         stage('Build docker image'){
                                              steps{
                                                      script{
-                                                         sh 'docker build -t mohamedamineboughrara/demo .'
+                                                         bat 'docker build -t mohamedamineboughrara/demo .'
                                                                          }
                                                                        }
                                                                    }
                                        stage('Docker login') {
 
                                                        steps {
-                                                         sh 'echo "login Docker ...."'
-                                                         sh 'docker login -u mohamedamineboughrara -p azerty123'
+                                                         bat 'echo "login Docker ...."'
+                                                         bat'docker login -u mohamedamineboughrara -p azerty123'
                                                                     }  }
                                        stage('Docker push') {
 
                                                        steps {
-                                                           sh 'echo "Docker is pushing ...."'
-                                                       	sh 'docker push mohamedamineboughrara/demo'
+                                                           bat 'echo "Docker is pushing ...."'
+                                                       	bat 'docker push mohamedamineboughrara/demo'
                                                                     }  }
 
 
